@@ -14,5 +14,6 @@ module.exports = {
       { test: /\.md$/, loader: 'raw-loader'},
       { test: /\.html$/, loader: "file?name=[name].[ext]" }
     ],
+    noParse: [/anser\/dist/]
   }
 }
