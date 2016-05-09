@@ -10,7 +10,7 @@ import {
 
 import {
   escapeForHtml, ansiToHtml
-} from 'anser/lib';
+} from 'anser';
 
 import {
   Widget

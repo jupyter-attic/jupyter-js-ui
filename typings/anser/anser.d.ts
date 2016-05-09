@@ -3,7 +3,7 @@
 // Definitions by: Steven Silvester <https://github.com/blink1073>
 
 
-declare module "anser/lib" {
+declare module "anser" {
     export
     function escapeForHtml(txt: string): string;
 
