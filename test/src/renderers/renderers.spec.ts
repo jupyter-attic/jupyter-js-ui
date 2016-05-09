@@ -30,12 +30,14 @@ describe('jupyter-ui', () => {
     });
 
     it('should output the correct HTML with ansi colors', () => {
-      let consoleText = '\x1b[01;41;32mtext \x1b[00m';
+      let text = 'There is no text but \x1b[01;41;32mtext\x1b[00m.\nWoo.'
+      let plainText = 'There is no text but text.\nWoo.'
+      let innerHTML = '<pre>There is no text but <span style="color:rgb(0, 255, 0);background-color:rgb(187, 0, 0)">text</span>.\nWoo.</pre>'
       let t = new TextRenderer();
-      let w = t.render('application/vnd.jupyter.console-text', consoleText);
+      let w = t.render('application/vnd.jupyter.console-text', text);
       let el = w.node;
-      expect(el.innerHTML).to.be('<pre><span class="ansi-bright-green-fg ansi-red-bg">text </span></pre>');
-      expect(el.textContent).to.be('text ');
+      expect(el.innerHTML).to.be(innerHTML);
+      expect(el.textContent).to.be(plainText);
     });
 
   });

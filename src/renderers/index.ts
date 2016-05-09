@@ -110,7 +110,7 @@ class TextRenderer implements IRenderer<Widget> {
     let w = new Widget();
     let el = document.createElement('pre');
     let esc = escapeForHtml(data);
-    el.innerHTML = ansiToHtml(esc, {use_classes: true});
+    el.innerHTML = ansiToHtml(esc);
     w.node.appendChild(el);
     return w;
   }
